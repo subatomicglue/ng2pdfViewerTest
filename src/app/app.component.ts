@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   pdfshow:boolean = true;
-  pdfzoom:boolean = true;
+  pdfzoom:number = 0.8;
 }
