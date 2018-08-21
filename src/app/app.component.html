@@ -1,0 +1,38 @@
+
+<div (click)="pdfshow = !pdfshow">close</div>
+<div (click)="pdfzoom=1 < (pdfzoom+0.1) ? 1 : (pdfzoom+0.1)">zoomin</div>
+<div (click)="pdfzoom=(pdfzoom-0.1) < 0.1 ? 0.1 : (pdfzoom-0.1)">zoomout</div>
+<div *ngIf='pdfshow'>
+	viewer:
+	<pdf-viewer *ngIf="pdfshow" (click)="$event.stopPropagation()" style='background-color:black;display: block;'
+		[src]="'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf'"
+		[original-size]="false"
+		[render-text]="true"
+		[autoresize]="true"
+		[show-all]="true"
+		[zoom]="pdfzoom"
+		[fit-to-page]="false"
+	></pdf-viewer>
+</div>
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
